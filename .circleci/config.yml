@@ -9,12 +9,13 @@ jobs:
       - run:
           name: "Install Dependencies"
           command: sudo npm install
-      - run:
-          name: "Install Playwright"
-          command: npx playwright install-deps
+      # - run:
+      #     name: "Install Playwright"
+      #     command: npx playwright install-deps
       - run:
           name: "Run the test on BrowserStack"
-          command: npx playwright test e2e.spec.js --config=resources/conf/playwright-bstack.config.js --workers 2
+          command: sudo npm run bstack-parallel-browsers
+          # command: npx playwright test e2e.spec.js --config=resources/conf/playwright-bstack.config.js --workers 2
 workflows:
   build:
     jobs:
