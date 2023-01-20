@@ -11,7 +11,7 @@ jobs:
           command: sudo npm install
       - run:
           name: "Install Playwright"
-          command: npx playwright install
+          command: npx playwright install-deps
       - run:
           name: "Run the test on BrowserStack"
           command: npx playwright test e2e.spec.js --config=resources/conf/playwright-bstack.config.js --workers 2
