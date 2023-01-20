@@ -9,9 +9,9 @@ jobs:
       - run:
           name: "Install Dependencies"
           command: sudo npm install
-      # - run:
-      #     name: "Install Playwright"
-      #     command: npx playwright install-deps
+      - run:
+          name: "Install Playwright"
+          command: npx playwright install --with-deps
       - run:
           name: "Run the test on BrowserStack"
           command: sudo npm run bstack-parallel-browsers
