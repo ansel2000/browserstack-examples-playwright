@@ -17,7 +17,7 @@ jobs:
       #     command: npx playwright install --with-deps
       - run:
           name: "Run the test on BrowserStack"
-          command: sudo npm run bstack-parallel-browsers
+          command: npm run bstack-parallel-browsers
           # command: npx playwright test e2e.spec.js --config=resources/conf/playwright-bstack.config.js --workers 2
 workflows:
   build:
