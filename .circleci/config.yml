@@ -7,8 +7,6 @@ jobs:
     steps:
       - checkout
       - run: npm i -D @playwright/test
-      # - run: npx playwright install
-      - run: npx playwright install
       - run: npx playwright install chrome
       # - run:
       #     name: "Install Dependencies"
