@@ -17,12 +17,14 @@ jobs:
           command: |
             wget "https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip"
             npx extract-zip BrowserStackLocal-linux-x64.zip
-            ./BrowserStackLocal $BROWSERSTACK_ACCESS_KEY
-          background: true
-
-      - run:
-          name: "Run the test on BrowserStack"
-          command: npm run bstack-parallel-browsers
+            ./BrowserStackLocal $BROWSERSTACK_ACCESS_KEY --daemon start
+            npm run bstack-parallel-browsers
+            ./BrowserStackLocal --key $BROWSERSTACK_ACCESS_KEY --daemon stop
+          
+          
+      # - run:
+      #     name: "Run the test on BrowserStack"
+      #     command: npm run bstack-parallel-browsers
           # command: npx playwright test e2e.spec.js --config=resources/conf/playwright-bstack.config.js --workers 2
 workflows:
   build:
