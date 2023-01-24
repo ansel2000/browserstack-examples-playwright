@@ -6,7 +6,7 @@ jobs:
     working_directory: ~/app
     steps:
       - checkout
-      - run: npm i unzip
+      - run: npm i extract-zip
       - run: npm i -D @playwright/test
       - run: npx playwright install chrome
       # - run:
@@ -16,7 +16,7 @@ jobs:
           name: Download BrowserStack Local binary and start it.
           command: |
             wget "https://www.browserstack.com/browserstack-local/BrowserStackLocal-linux-x64.zip"
-            npx unzip BrowserStackLocal-linux-x64.zip
+            npx extract-zip BrowserStackLocal-linux-x64.zip
             ./BrowserStackLocal $BROWSERSTACK_ACCESS_KEY
           background: true
 
