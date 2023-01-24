@@ -6,6 +6,7 @@ jobs:
     working_directory: ~/app
     steps:
       - checkout
+      - run: sudo apt-get install unzip
       - run: npm i -D @playwright/test
       - run: npx playwright install chrome
       # - run:
